@@ -53,7 +53,7 @@ flextextGrob <- function(txt,
   ys <- coords$y
   
   xs <- xs - hjust * txt_width
-  ys <- ys + (1 - vjust) * txt_height
+  ys <- ys - yrange[2] + (1 - vjust) * txt_height
   
   xs <- xs * scale
   ys <- ys * scale
