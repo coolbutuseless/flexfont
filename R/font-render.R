@@ -36,7 +36,6 @@ flextextGrob <- function(txt,
     txt, 
     w    = as.numeric(w), 
     h    = as.numeric(h), 
-    sw   = lwd, 
     hgap = as.numeric(hgap), 
     vgap = as.numeric(vgap),
     npoints = npoints
@@ -150,7 +149,6 @@ path_to_df <- function(path, npoints) {
 #' 
 #' @param s string. May include newlines
 #' @param w,h character width and height
-#' @param sw stroke width. Used to adjust some character forms. Default: 1
 #' @param hgap,vgap the gap between each letter
 #' @param npoints the number of points to render for each arc.  Default: 10.
 #'        Higher numbers will give a smoother appearance to the curves.
@@ -159,7 +157,7 @@ path_to_df <- function(path, npoints) {
 #' flex_coords('x')
 #' @export
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-flex_coords <- function(s, w = 1, h = 1, sw = 1, hgap = 0.1, vgap = 0.1, npoints = 10) {
+flex_coords <- function(s, w = 1, h = 1, hgap = 0.1, vgap = 0.1, npoints = 10) {
   
   chrs <- strsplit(s, "")[[1]]
   
@@ -173,7 +171,7 @@ flex_coords <- function(s, w = 1, h = 1, sw = 1, hgap = 0.1, vgap = 0.1, npoints
       xoff <<- 0
       NULL
     } else {
-      path  <- chr_to_path(chr, w = w, h = h , sw = sw)
+      path  <- chr_to_path(chr, w = w, h = h)
       chr_df <- path_to_df(path, npoints = npoints)  
       chr_df$x <- chr_df$x + xoff
       chr_df$y <- chr_df$y + yoff

@@ -12,6 +12,9 @@
 `flexfont` is an R version of the javascript font
 [flexflex](https://github.com/ronikaufman/flexflex) by Roni Kaufman.
 
+This is a vector font - each glyph is defined by lines + circle
+segments - which means the letters can be made in all shapes and sizes.
+
 This package includes a very minimal SVG path render. Arc path rendering
 was borrowed from
 [`{svgparser}`](https://github.com/coolbutuseless/svgparser).
@@ -59,6 +62,38 @@ grid.draw(g1)
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
+## Vector font shenanigans
+
+``` r
+library(flexfont)
+library(grid)
+library(gridExtra)
+
+# Define a layout
+lay <- rbind(
+  c( 1,  1,  2,  2,  3,  4),
+  c( 1,  1,  2,  2,  5,  6),
+  c( 7,  8,  9, 10, 11, 12),
+  c(13, 13, 14, 14, 16, 17),
+  c(13, 13, 15, 15, 16, 17),
+  c(18, 18, 19, 20, 22, 23),
+  c(18, 18, 19, 20, 24, 25),
+  c(18, 18, 19, 21, 26, 26)
+)
+
+# A grob for each letter
+grobs <- lapply(letters, flextextGrob, w = 0.9, h = 0.9, gp = gpar(lwd = 3)) 
+
+# Place the grobs into the layout
+grid::grid.newpage()
+gridExtra::grid.arrange(
+  grobs = grobs,
+  layout_matrix = lay
+)
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
 ## Custom plotting of coordinates
 
 This example illustrates how to get the raw coordinates for the letters
@@ -84,7 +119,7 @@ ggplot(coords) +
   theme_void()
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ## Related Software
 

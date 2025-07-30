@@ -4,14 +4,12 @@
 \alias{flex_coords}
 \title{Create a data.frame of text coordiantes for the given text}
 \usage{
-flex_coords(s, w = 1, h = 1, sw = 1, hgap = 0.1, vgap = 0.1, npoints = 10)
+flex_coords(s, w = 1, h = 1, hgap = 0.1, vgap = 0.1, npoints = 10)
 }
 \arguments{
 \item{s}{string. May include newlines}
 
 \item{w, h}{character width and height}
-
-\item{sw}{stroke width. Used to adjust some character forms. Default: 1}
 
 \item{hgap, vgap}{the gap between each letter}
 

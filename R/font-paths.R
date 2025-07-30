@@ -8,13 +8,14 @@
 #'
 #' @param ch chararacter. Must be a-zA-Z
 #' @param w,h width and height of character. Default: 1
-#' @param sw stroke width. Default: 1
 #' @return cahracter vector of SVG path elements
 #' @importFrom glue glue
 #' @noRd
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-chr_to_path <- function(ch, w = 1, h = 1, sw = 1) {
+chr_to_path <- function(ch, w = 1, h = 1) {
   ch <- toupper(ch);
+  
+  sw <- 0
   
   path <- switch(
     EXPR = ch, 
