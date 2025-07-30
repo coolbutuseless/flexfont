@@ -1,0 +1,23 @@
+Package: flexfont
+Type: Package
+Title: Flexible Font
+Version: 0.1.0
+Authors@R: c(
+    person("Mike", "Cheng", role = c("aut", "cre", 'cph'), email = "mikefc@coolbutuseless.com"),
+    person("Roni", "Kaufman", role = c("aut"), comment = "Author of original font")
+    )
+Maintainer: Mike Cheng <mikefc@coolbutuseless.com>
+URL: https://github.com/coolbutuseless/flexfont
+BugReports: https://github.com/coolbutuseless/flexfont/issues
+Description: Flexible font.
+License: CC BY-NC-SA + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Copyright: This package is a derivative work of the "FlexFlex" font 
+    created by Roni Kaufman.  See COPYRIGHTS for the full license for 
+    that font.
+RoxygenNote: 7.3.2
+Imports:
+    glue
+Depends:
+    R (>= 4.1.0)
