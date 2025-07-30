@@ -61,7 +61,8 @@ grid.draw(g1)
 
 ## Custom plotting of coordinates
 
-This is a basic example which shows you how to solve a common problem:
+This example illustrates how to get the raw coordinates for the letters
+and plot manually.
 
 ``` r
 library(flexfont)
